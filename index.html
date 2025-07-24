@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aviator Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #0d1117;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    .container {
+      background: #161b22;
+      border: 2px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+    }
+    .btn {
+      background: #ff0033;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .prediction {
+      font-size: 48px;
+      margin: 20px 0;
+      color: #00ff99;
+    }
+    .note {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Aviator Predictor</h1>
+    <p>Next round prediction:</p>
+    <div class="prediction" id="prediction">--</div>
+    <button class="btn" onclick="generatePrediction()">Predict Now</button>
+    <p class="note">*For registered users only</p>
+  </div>
+
+  <script>
+    function generatePrediction() {
+      const multipliers = [1.11, 1.29, 1.53, 1.72, 2.01, 3.12, 5.24, 7.77, 10.25];
+      const prediction = multipliers[Math.floor(Math.random() * multipliers.length)];
+      document.getElementById("prediction").textContent = prediction + "x";
+    }
+  </script>
+</body>
+</html>
